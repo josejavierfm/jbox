@@ -1,0 +1,128 @@
+.h42{
+  height:42px;
+}
+.login-page,.register-page{
+	background:#d20000;
+	background: url("../img/fondo.jpg") no-repeat center center fixed;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+	-o-background-size:cover;
+	background-size: cover;
+}
+.login-logo, .register-logo {
+    background-color:#fff;
+    margin-bottom:0px !important; 
+}
+.form-control{
+	    margin-top: 1px;
+	    margin-bottom: 1px;
+}
+.form-control:focus {
+    background-color: #DBDBEA;
+}
+.form-control:not(select) {
+   background-color: #fff;
+}
+
+.tab1{
+	padding-left:40px;
+}
+.tab2{
+	padding-left:80px;
+}
+.tab3{
+	padding-left:120px;
+}
+#btguardar{
+	position:fixed;
+	bottom:40px;
+	right:20px;
+}
+@media (max-width: 1110px) {
+  #btguardar{
+  	position:relative;
+  	bottom:0px;
+  	right:0px;
+  }
+}
+.activelabel{
+ 	background-color: #DBDBEA;
+}
+input[type="radio"]+label{ font-weight: normal;cursor:pointer; } 
+input[type="checkbox"]+label{ font-weight: normal;cursor:pointer; } 
+input[type="radio"]+label:hover{ text-decoration:underline; } 
+input[type="checkbox"]+label:hover{ text-decoration:underline; } 
+input[type="radio"]:checked+label{ font-weight: bold; } 
+input[type="checkbox"]:checked+label{ font-weight: bold; } 
+.radhide{
+	
+}
+.checkhide{
+	
+}
+.subrojo{
+	border-bottom:2px solid #E0695F;
+}
+.subazul{
+	border-bottom:2px solid #3c8dbc;	
+}
+.subnaranja{
+	border-bottom:2px solid #ff851b;	
+}
+.imagenayuda{
+	width:100%;
+}
+#fnuevo .col-xs-6{
+	text-align: right !important;
+}
+.derecha{
+	text-align: right !important;
+}
+.izquierda{
+	text-align: left !important;
+}
+label{
+	line-height: 34px;
+}
+@media (min-height: 700px) {
+	.menupaciente{
+		position:fixed;
+	}
+}
+.subcaja{
+	    border: 1px solid #ad7279;
+    margin: 5px;
+    padding-bottom: 10px;
+}
+.subgrupo{
+	text-decoration: underline;
+	text-align:center;
+	color:#ad7279;
+}
+.ayudammse{
+	font-size:10px !important;
+	text-align:left !important;
+}
+.ayudammse td{
+	border: 1px solid;
+	padding:2px;
+}
+.imgayuda{
+	cursor:pointer;
+	font-size:8px;
+	
+}
+.p15{
+	    padding-right: 15px;
+    padding-left: 15px;
+}
+.oculto{
+	display:none;
+}
+.ayuda{
+	font-size:80%;
+	color: darkgray;
+}
+.highlight:hover div{
+	background:#cee;
+}
