@@ -22,11 +22,11 @@ include_once("cabecerafuera.php");
         <p class="login-box-msg">Identificate</p>
         <form action="entrada.php" method="POST" id="fentrada" name="fentrada">
           <div class="form-group has-feedback">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Email"  data-validate="required" value="josejavierfm@gmail.com" autocomplete="off">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email"  data-validate="required" value="" autocomplete="off">
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="clave" id="clave" placeholder="Clave"  data-validate="required" value="FicheroS" autocomplete="off">
+            <input type="password" class="form-control" name="clave" id="clave" placeholder="Clave"  data-validate="required" value="" autocomplete="off">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
