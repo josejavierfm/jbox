@@ -174,11 +174,61 @@ function EmailUsuario($omy,$idusuario){
 		return "";
 	}
 }
-
-
-function numFicheros($dir){
-	return 0;
+function numFicheros($path) {
+    $size = 0;
+    $ignore = array('.','..');
+    $files = scandir($path);
+    foreach($files as $t) {
+        if(in_array($t, $ignore)) continue;
+        if (is_dir(rtrim($path, '/') . '/' . $t)) {
+            $size += numFicheros(rtrim($path, '/') . '/' . $t);
+        } else {
+            $size++;
+        }   
+    }
+    return $size;
 }
+function numDirectorios($path) {
+    $size = 0;
+    $ignore = array('.','..');
+    $files = scandir($path);
+    foreach($files as $t) {
+        if(in_array($t, $ignore)) continue;
+        if (is_dir(rtrim($path, '/') . '/' . $t)) {
+            $size += numDirectorios(rtrim($path, '/') . '/' . $t)+1;
+        } 
+    }
+    return $size;
+}
+
+function numDirectoriosMAL($path) {return "-";
+ 
+    // (Ensure that the path contains an ending slash)
+ 
+    $dir_count = 0;
+ 
+    $dir_handle = opendir($path);
+ 
+    if (!$dir_handle) return -1;
+ 
+    while ($file = readdir($dir_handle)) {
+ 
+        if ($file == '.' || $file == '..') continue;
+ 
+        if (is_dir($path . DIRECTORY_SEPARATOR . $file)){ 
+echo $path . DIRECTORY_SEPARATOR . $file;
+			$dir_count++;
+            $dir_count += numDirectorios($path . DIRECTORY_SEPARATOR . $file . DIRECTORY_SEPARATOR);
+			
+        }
+       
+    }
+ 
+    closedir($dir_handle);
+	echo "<pre>";print_r($dir_count);echo "</pre>";
+    return $dir_count;
+}
+
 function numPendientes($omy){
 	$sentencia="select count(*) as t from ".prefijo."usuario where valido=0";
 	$omy->Query=$sentencia;
