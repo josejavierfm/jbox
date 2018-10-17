@@ -8,6 +8,7 @@ require_once("lib/funciones.php");
 	if ($email!=""){
 		include_once("lib/LogMail.php");
 		$res=EnviaCorreo($email,"probando","Son las ".date("H:i:s"));
+		//echo "<pre>";print_r($res);echo "</pre>";die;
 
 		if ($res->Exito==1){
 			$_SESSION['avisopopup']="Se ha mandado un  email de prueba";

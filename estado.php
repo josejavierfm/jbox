@@ -2,8 +2,15 @@
 
 	$omy = new DB_mysql();
 	$omy->conectar("");
-$numficheros=numFicheros($_SESSION['directorio']);
-$numpendientes=numPendientes($omy);
+	
+if ($_SESSION['directorio']!=""){
+	$numficheros=numFicheros($_SESSION['directorio']);
+	$numdirectorios=numDirectorios($_SESSION['directorio']);
+}else{
+	$numficheros="-";
+	$numdirectorios="-";
+}
+
 $datosultimoacceso= datosUltimoAcceso($omy,$_SESSION[prefijo.'idusuario']);
 ?>
       <!-- Left side column. contains the logo and sidebar -->
@@ -41,7 +48,22 @@ $datosultimoacceso= datosUltimoAcceso($omy,$_SESSION[prefijo.'idusuario']);
                 <a href="ficheros.php" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
-			<? if ($_SESSION['perfil']>1){?>
+			 <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box <?if ($numdirectorios==0){ echo "bg-red";}else{ echo "bg-green";}?>">
+                <div class="inner">
+                  <h3><? echo $numdirectorios;?></h3>
+                  <p class="h42">Directorios</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-users"></i>
+                </div>
+                <a href="ficheros.php" class="small-box-footer">Ver <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+			<? if ($_SESSION['perfil']>1){
+				$numpendientes=numPendientes($omy);
+			?>
 			  <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box <?if ($numpendientes==0){ echo "bg-red";}else{ echo "bg-green";}?>">
